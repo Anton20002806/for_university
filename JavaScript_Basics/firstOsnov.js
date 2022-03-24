@@ -8,20 +8,23 @@ function func(num) {
 var object = {"name": "Anton", "years": 19, "eyes_color": "blue"}
 
 function onlyNum(num) {
+    var type = "Это NULL!";
     if (typeof (num) === "number") {
-        console.log("Это число!");
+        type = "Это число!";
     } else if (typeof (num) === "string") {
-        console.log("Это строка!");
+        type = "Это строка!";
     } else if (typeof (num) === "boolean") {
-        console.log("Это логический тип!");
+        type = "Это логический тип!";
     } else if (typeof (num) === "undefined") {
-        console.log("Это отсутствие примитива!");
+        type = "Это отсутствие примитива!";
     } else if (typeof (num) === "function") {
-        console.log("Это функция!");
+        type = "Это функция!";
     } else if (typeof (num) === "object") {
-        console.log("Это объект!");
+        type = "Это объект!";
     }
+    console.log(type)
 }
+
 
 onlyNum(undef);
 onlyNum(num);
