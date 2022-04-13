@@ -1,5 +1,5 @@
 var lg = console.log
-/*Queue = {
+Queue = {
     commands: [
         {id: "1-command", command: "go"},
         {id: "2-command", command: "rotate"},
@@ -22,11 +22,10 @@ var lg = console.log
 
     set property(command) {
         var arr = this.commands[0].id.split("-");
-        var newID = this.commands.length + 2 + "-" + arr[1];
+        var newID = this.commands.length + 1 + "-" + arr[1];
         var newEl = {id: newID, command: command}
         this.commands = this.commands.concat(newEl);
-    }
-    ,
+    },
 
     showQueue: function () {
         for (var i = 0; i < this.commands.length; i++)
@@ -45,9 +44,9 @@ lg("");
 lg("Первый элемент объекта :")
 lg(Queue.property);
 lg("");
-Queue.showQueue();*/
+Queue.showQueue();
 
-var HappyBirthday = {
+/*var HappyBirthday = {
     hDays: [
         {name: "Dave", month: "09", day: "04"},
         {name: "Ann", month: "02", day: "27"},
@@ -97,4 +96,4 @@ lg("День рождения в феврале ------------>");
 lg(" ");
 lg(HappyBirthday.hDays);
 HappyBirthday.property = ["Anton", "02/18"];
-lg(HappyBirthday.showDaysOnMonth('02'));
+lg(HappyBirthday.showDaysOnMonth('02'));*/
