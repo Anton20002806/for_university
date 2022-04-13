@@ -64,12 +64,24 @@ var HappyBirthday = {
         return names.join(',')
 
     },
-    set property({name, day}) { //возник вопрос
-        for (var i = 0; i < this.hDays.length; i++) {
-            if (this.hDays[i].day === day || this.hDays[i].name === name)
-                var sec = this.hDays[i];
+    set property([name, day]) {
+        var split_date = day.split("/");
+        if ((Number(split_date[1] < 32) && split_date[1] !== '0') && (Number(split_date[0] < 13) && split_date[0] !== '0')) {
+
+            if (split_date[0].startsWith('0') === false && Number(split_date[0]) < 10)
+                split_date[0] = '0' + split_date[0]
+            if (split_date[1].startsWith('0') === false && Number(split_date[1]) < 10)
+                split_date[1] = '0' + split_date[1]
+            this.hDays.push(
+                {
+                    name: name[0].toUpperCase() + name.slice(1),
+                    month: split_date[0],
+                    day: split_date[1],
+                });
+        } else {
+            lg("Дата не верная");
         }
-        return sec
+
     },
     showDaysOnMonth: function (month) {
         var nam = [];
@@ -82,5 +94,7 @@ var HappyBirthday = {
 };
 lg(HappyBirthday.property);
 lg("День рождения в феврале ------------>");
-lg(HappyBirthday.showDaysOnMonth('02'));
 lg(" ");
+lg(HappyBirthday.hDays);
+HappyBirthday.property = ["Anton", "02/18"];
+lg(HappyBirthday.showDaysOnMonth('02'));
