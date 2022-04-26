@@ -1,4 +1,5 @@
 lg = console.log;
+'use strict'
 //Задание 1
 lg('Заданиe 1 ->');
 const sub = (a, b) => {
@@ -81,7 +82,7 @@ lg(show(groul));
 lg('--------------------')
 //8
 lg('Заданиe 8 ->');
-Array1 = [
+const Array1 = [
     ["+Миша"],
     ["+Олег"],
     ["+Антон"],
@@ -100,7 +101,7 @@ const trafic = (arr) => {
     let sum = 0;
     arr.forEach(function (item, index) {
         if (arr[index][0].includes(':', 0) === true) {
-            a = arr[index][0].split(":");
+            let a = arr[index][0].split(":");
             sum = sum + a[1].length * (k - 1);
         }
         if (arr[index][0].includes('+', 0) === true)
