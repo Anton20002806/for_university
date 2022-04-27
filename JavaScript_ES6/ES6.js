@@ -13,6 +13,30 @@ const sub = (a, b) => {
 lg(sub(90000400001240, 24)); // для вывода только окончат. результата
 lg('--------------------')
 
+//4
+lg('Заданиe 4 ->');
+const Array2 = ["Миша", "Гена", "Маша", "Олег", "Петя", "Вова", "Вера", "Лена", "Света"];
+const Zad = (arr, name, j, i, count) => {
+    if (j > i)
+        return count;
+    else
+        arr.push(name[j])
+    j++;
+    count++;
+    return Zad(arr, name, j, i, count)
+}
+const Res = (name, k) => {
+    let j = 1;
+    let new_arr = [];
+    name.forEach(function (item, index) {
+        Zad(new_arr, name, 0, index, j);
+    });
+    if (j = k)
+        return new_arr[j - 1];
+}
+lg(Res(Array2, 30));
+lg('--------------------')
+
 //6
 lg('Заданиe 6 ->');
 const OddEven = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2];
@@ -64,7 +88,7 @@ const countRec = (str, str1, i, j) => {
         return countRec(str, str1, str.indexOf(str1, i) + 1, j + 1);
 }
 const search = (str) => {
-    var mass = [];
+    let mass = [];
     mass[0] = countRec(str, "Г", 0, 0);
     mass[1] = countRec(str, "р", 0, 0);
     mass[2] = countRec(str, "о", 0, 0);
