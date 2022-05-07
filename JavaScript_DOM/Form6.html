@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
 <html lang="ru">
 <head>
-    <title>Form</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Form 6</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <style>
     p {
@@ -36,10 +36,11 @@
 #Zag{
     font-size: 30px;
 }
+input{
+    border-radius: 10px;
+}
 </style>
-
 <body>
-
     <div id="div_form">
         <div class="form-label">
             <p id = "Zag">Создание опроса</p>
@@ -53,18 +54,17 @@
             </label>
             <p></p>
             <label>
-                <button onclick="func()" class = "btn" id="btn" >Добавить</button>
+                <button onclick="func()" class = "btn btn-dark" id="btn" >Добавить</button>
             </label>
             <p id="result"></p>
             <p id = "result1"></p>
         </div>
     </div>
-
-<script>
+ <script>
     function func() {
          document.getElementById('result').innerHTML = document.getElementById('que_name').value ;
          document.getElementById('result1').innerHTML = document.getElementById('que_text').value ;
     }
-</script>
+ </script>
 </body>
 </html>
