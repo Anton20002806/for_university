@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+    <title>Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<style>
+    p {
+        font-size: 15px;
+        padding-top: 10px;
+        margin-bottom: 0;
+    }
+
+    #div_form {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #form, .btn {
+        width: 200px;
+    }
+#btn{
+    color: white;
+    background-color: black;
+    border: none;
+    outline: none;
+    padding: 10px 5px;
+    cursor: pointer;
+    user-select: none;
+}
+#Zag{
+    font-size: 30px;
+}
+</style>
+
+<body>
+
+    <div id="div_form">
+        <div class="form-label">
+            <p id = "Zag">Создание опроса</p>
+            <p>Название анкеты</p>
+            <label>
+                <input type = "text" id="que_name">
+            </label>
+            <p>Текст вопроса</p>
+            <label>
+                <input type = "text" id="que_text">
+            </label>
+            <p></p>
+            <label>
+                <button onclick="func()" class = "btn" id="btn" >Добавить</button>
+            </label>
+            <p id="result"></p>
+            <p id = "result1"></p>
+        </div>
+    </div>
+
+<script>
+    function func() {
+         document.getElementById('result').innerHTML = document.getElementById('que_name').value ;
+         document.getElementById('result1').innerHTML = document.getElementById('que_text').value ;
+    }
+</script>
+</body>
+</html>
