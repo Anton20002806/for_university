@@ -38,7 +38,9 @@
 }
 input{
     border-radius: 10px;
+    padding-left: 5px;
 }
+
 </style>
 <body>
     <div id="div_form">
@@ -56,14 +58,33 @@ input{
             <label>
                 <button onclick="func()" class = "btn btn-dark" id="btn" >Добавить</button>
             </label>
-            <p id="result"></p>
-            <p id = "result1"></p>
+            <div id = "question_name"></div>
+               <div id = "question_container">
+               </div>
         </div>
     </div>
  <script>
-    function func() {
-         document.getElementById('result').innerHTML = document.getElementById('que_name').value ;
-         document.getElementById('result1').innerHTML = document.getElementById('que_text').value ;
+     let i=1;
+     let j=0;
+    function func(){
+        // document.getElementById('result').innerHTML = document.getElementById('que_name').value + document.getElementById('que_text').value ;
+       const header = document.createElement("div");
+       const nameQ = document.createElement("div");
+        const p = document.createElement("p");
+        const question = document.createElement("div");
+        question.classList.add("card");
+        document.getElementById("que_name").appendChild(nameQ);
+        document.getElementById("question_container").appendChild(question);
+        question.appendChild(nameQ);
+       question.appendChild(header);
+        question.appendChild(p);
+        if(j===0)
+        nameQ.textContent = document.getElementById("que_name").value;
+        j++;
+        header.textContent = "Вопрос" + i;//
+        i++;
+        p.textContent = document.getElementById("que_text").value;
+        document.getElementById("que_text").value="";
     }
  </script>
 </body>
